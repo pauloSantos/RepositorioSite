@@ -34,7 +34,7 @@
   <property name="static"    		   value="\${basedir}/SiteDieta/static"/>
   <property name="images"    		   value="\${basedir}/SiteDieta/images"/>
   <property name="persistence"    	   value="\${basedir}/SiteDieta/WEB-INF/classes/META-INF"/>
-  <property name="local.workspace"    value="C:/Users/Paulo/Java/workspace"/>
+  <property name="local.workspace"    value="C:/Users/Paulo/Java/RepositorioSite"/>
   
   <!-- =================== BUILD: Create Directories ====================== -->
   <target name="init">
