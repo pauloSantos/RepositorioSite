@@ -22,10 +22,10 @@
     	<li class="active"><a href="#dietaManha" data-toggle="tab">Manh&atilde;</a></li>
     	<li><a href="#dietaTarde" data-toggle="tab">Tarde</a></li>
     	<li><a href="#dietaNoite" data-toggle="tab">Noite</a></li>
-    	<li><s:submit name="salvar" value="Salvar"></s:submit></li>
 	</ul>
 <div class="tab-content">
 <div class="tab-pane active" id="dietaManha">
+<s:messages></s:messages>
 <s:errors/>
 <table>
 <tr>
@@ -39,12 +39,13 @@
 <table class="espacoSuperior">
 <tr>
 <td><input id="btnMaisAlimento1" class="botaoMaisAlimento" type="button" onclick="manipularCampos('btnMaisAlimento2', 'lbAlimento2', 'txAlimento2', 'lbQuantidade2', 'txQuantidade2', 'medidas2')" value="+"/></td>
-<td><label class="labelAlimento">Alimento:</label></td>
-<td><s:text id="txAlimento1"  name ="nomeAlimentos" class="inputAlimento"></s:text></td>
-<td><label class="labelQuantidade" >Quantidade:</label></td>
-<td><s:text id="quantidadePrimeiroAlimento" name="quantidade" class="inputQuantidade input-mini"/></td>
+<td><label id="lbAlimento1" class="labelAlimento">Alimento:</label></td>
+<td><s:text id="txAlimento1"  name ="nomeAlimentos.alimento1" class="inputAlimento"></s:text></td>
+<td><label id="lbQuantidade1" class="labelQuantidade" >Quantidade:</label></td>
+<td><s:text id="txQuantidade1" name="quantidade.alimento1" class="inputQuantidade input-mini"/></td>
 <td>
-<s:select name="listaUnidadeDeMedida" class="comboMedidas">
+<s:select id="medidas1" name="listaUnidadeDeMedida.alimento1" class="comboMedidas">
+  <option></option>
   <option>ml</option>
   <option>gramas</option>
 </s:select>
@@ -54,11 +55,12 @@
 <tr>
 <td><input id="btnMaisAlimento2" class="botaoMaisAlimento" type="button" style="display: none" onclick="manipularCampos('btnMaisAlimento3', 'lbAlimento3', 'txAlimento3', 'lbQuantidade3', 'txQuantidade3', 'medidas3')" value="+"/></td>
 <td><label id="lbAlimento2" class="labelAlimento" style="display: none" >Alimento:</label></td>
-<td><input id="txAlimento2" name ="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><input id="txAlimento2" name ="nomeAlimentos.alimento2" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade2" class="labelQuantidade" style="display: none" >Quantidade:</label></td>
-<td><s:text id="txQuantidade2" name="quantidade" class="inputQuantidade input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade2" name="quantidade.alimento2" class="inputQuantidade input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas2" name="listaUnidadeDeMedida"  class="comboMedidas" style="display: none" >
+<s:select id="medidas2" name="listaUnidadeDeMedida.alimento2"  class="comboMedidas" style="display: none" >
+  <option></option>
   <option>ml</option>
   <option>gramas</option>
 </s:select>
@@ -68,11 +70,12 @@
 <tr>
 <td><input id="btnMaisAlimento3" class="botaoMaisAlimento" style="display: none" type="button" onclick="manipularCampos('btnMaisAlimento4', 'lbAlimento4', 'txAlimento4', 'lbQuantidade4', 'txQuantidade4', 'medidas4')" value="+"/></td>
 <td><label id="lbAlimento3" class="labelAlimento" style="display: none" >Alimento:</label></td>
-<td><s:text id="txAlimento3" name ="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><s:text id="txAlimento3" name ="nomeAlimentos.alimento3" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade3" class="labelQuantidade" style="display: none" >Quantidade:</label></td>
-<td><s:text id="txQuantidade3" name="quantidade" class="inputQuantidade input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade3" name="quantidade.alimento3" class="inputQuantidade input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas3" name="listaUnidadeDeMedida"  class="comboMedidas" style="display: none">
+<s:select id="medidas3" name="listaUnidadeDeMedida.alimento3"  class="comboMedidas" style="display: none">
+  <option></option>
   <option>ml</option>
   <option>gramas</option>
 </s:select>
@@ -82,11 +85,12 @@
 <tr>
 <td><input id="btnMaisAlimento4"class="botaoMaisAlimento" type="button" onclick="manipularCamposSemBotao('lbAlimento5', 'txAlimento5', 'lbQuantidade5', 'txQuantidade5', 'medidas5')" value="+" style="display: none" /></td>
 <td><label id="lbAlimento4" class="labelAlimento" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento4" name ="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><s:text id="txAlimento4" name ="nomeAlimentos.alimento4" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade4" class="labelQuantidade" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade4" name="quantidade" class="inputQuantidade input-mini"style="display: none" /></td>
+<td><s:text id="txQuantidade4" name="quantidade.alimento4" class="inputQuantidade input-mini"style="display: none" /></td>
 <td>
-<s:select id="medidas4" name="listaUnidadeDeMedida"  class="comboMedidas" style="display: none">
+<s:select id="medidas4" name="listaUnidadeDeMedida.alimento4"  class="comboMedidas" style="display: none">
+  <option></option>
   <option>ml</option>
   <option>gramas</option>
 </s:select>
@@ -97,11 +101,12 @@
 <table>
 <tr>
 <td><label id="lbAlimento5" class="labelAlimentoSemBotao" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento5" name ="nomeAlimentos" class="inputAlimentoSemBotao" style="display: none"/></td>
+<td><s:text id="txAlimento5" name ="nomeAlimentos.alimento5" class="inputAlimentoSemBotao" style="display: none"/></td>
 <td><label id="lbQuantidade5" class="labelQuantidadeSemBotao" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade5" name="quantidade" class="inputQuantidadeSemBotao input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade5" name="quantidade.alimento5" class="inputQuantidadeSemBotao input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas5" name="listaUnidadeDeMedida"  class="comboMedidasSemBotao" style="display: none">
+<s:select id="medidas5" name="listaUnidadeDeMedida.alimento5"  class="comboMedidasSemBotao" style="display: none">
+  <option></option>
   <option>ml</option>
   <option>gramas</option>
 </s:select>
@@ -119,12 +124,13 @@
 <tr>
 <td><input id="btnMaisAlimento6" class="botaoMaisAlimento" type="button" onclick="manipularCampos('btnMaisAlimento7', 'lbAlimento7', 'txAlimento7', 'lbQuantidade7', 'txQuantidade7', 'medidas7')" value="+" style="display: none"/></td>
 <td><label id="lbAlimento6" class="labelAlimento" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento6"  name="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><s:text id="txAlimento6"  name="nomeAlimentos.alimento6" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade6" class="labelQuantidade" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade6" name="quantidade" class="inputQuantidade input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade6" name="quantidade.alimento6" class="inputQuantidade input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas6" name="listaUnidadeDeMedida" class="comboMedidas" style="display: none">
-  <option>ml</option>
+<s:select id="medidas6" name="listaUnidadeDeMedida.alimento6" class="comboMedidas" style="display: none">
+  <option></option>
+<option>ml</option>
   <option>gramas</option>
 </s:select>
 </td>
@@ -133,12 +139,13 @@
 <tr>
 <td><input id="btnMaisAlimento7" class="botaoMaisAlimento" type="button" onclick="manipularCampos('btnMaisAlimento8', 'lbAlimento8', 'txAlimento8', 'lbQuantidade8', 'txQuantidade8', 'medidas8')" value="+" style="display: none"/></td>
 <td><label id="lbAlimento7" class="labelAlimento" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento7" name ="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><s:text id="txAlimento7" name ="nomeAlimentos.alimento7" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade7" class="labelQuantidade" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade7" name="quantidade" class="inputQuantidade input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade7" name="quantidade.alimento7" class="inputQuantidade input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas7" name="listaUnidadeDeMedida" class="comboMedidas" style="display: none">
-  <option>ml</option>
+<s:select id="medidas7" name="listaUnidadeDeMedida.alimento7" class="comboMedidas" style="display: none">
+  <option></option>
+<option>ml</option>
   <option>gramas</option>
 </s:select>
 </td>
@@ -147,12 +154,13 @@
 <tr>
 <td><input id="btnMaisAlimento8" class="botaoMaisAlimento" type="button" onclick="manipularCampos('btnMaisAlimento9', 'lbAlimento9', 'txAlimento9', 'lbQuantidade9', 'txQuantidade9', 'medidas9')" value="+" style="display: none"/></td>
 <td><label id="lbAlimento8" class="labelAlimento" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento8" name="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><s:text id="txAlimento8" name="nomeAlimentos.alimento8" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade8" class="labelQuantidade" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade8" name="quantidade" class="inputQuantidade input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade8" name="quantidade.alimento8" class="inputQuantidade input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas8" name="listaUnidadeDeMedida" class="comboMedidas" style="display: none">
-  <option>ml</option>
+<s:select id="medidas8" name="listaUnidadeDeMedida.alimento8" class="comboMedidas" style="display: none">
+  <option></option>
+<option>ml</option>
   <option>gramas</option>
 </s:select>
 </td>
@@ -161,12 +169,13 @@
 <tr>
 <td><input id="btnMaisAlimento9"class="botaoMaisAlimento" type="button" onclick="manipularCamposSemBotao('lbAlimento10', 'txAlimento10', 'lbQuantidade10', 'txQuantidade10', 'medidas10')" value="+" style="display: none"/></td>
 <td><label id="lbAlimento9" class="labelAlimento" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento9" name="nomeAlimentos" class="inputAlimento" style="display: none"/></td>
+<td><s:text id="txAlimento9" name="nomeAlimentos.alimento9" class="inputAlimento" style="display: none"/></td>
 <td><label id="lbQuantidade9" class="labelQuantidade" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade9" name="quantidade" class="inputQuantidade input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade9" name="quantidade.alimento9" class="inputQuantidade input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas9" name="listaUnidadeDeMedida" class="comboMedidas" style="display: none">
-  <option>ml</option>
+<s:select id="medidas9" name="listaUnidadeDeMedida.alimento9" class="comboMedidas" style="display: none">
+  <option></option>
+<option>ml</option>
   <option>gramas</option>
 </s:select>
 </td>
@@ -176,12 +185,13 @@
 <table>
 <tr>
 <td><label id="lbAlimento10" class="labelAlimentoSemBotao" style="display: none">Alimento:</label></td>
-<td><s:text id="txAlimento10" name ="nomeAlimentos" class="inputAlimentoSemBotao" style="display: none"/></td>
+<td><s:text id="txAlimento10" name ="nomeAlimentos.alimento10" class="inputAlimentoSemBotao" style="display: none"/></td>
 <td><label id="lbQuantidade10" class="labelQuantidadeSemBotao" style="display: none">Quantidade:</label></td>
-<td><s:text id="txQuantidade10" name="quantidade" class="inputQuantidadeSemBotao input-mini" style="display: none"/></td>
+<td><s:text id="txQuantidade10" name="quantidade.alimento10" class="inputQuantidadeSemBotao input-mini" style="display: none"/></td>
 <td>
-<s:select id="medidas10" name="listaUnidadeDeMedida"  class="comboMedidasSemBotao" style="display: none">
-  <option>ml</option>
+<s:select id="medidas10" name="listaUnidadeDeMedida.alimento10"  class="comboMedidasSemBotao" style="display: none">
+  <option></option>
+<option>ml</option>
   <option>gramas</option>
 </s:select>
 </td>
@@ -201,7 +211,7 @@
 	
 </div>
 <!-- FIM DO TAB-CONTENT  -->
-
+<s:submit name="salvar" class="pull-right" style="margin-top: 50px;margin-right: 72px;" value="Salvar"></s:submit>
 </s:form>
 </div>
 		

@@ -33,8 +33,9 @@
   <property name="web.inf"   		   value="\${basedir}/SiteDieta/WEB-INF"/>
   <property name="static"    		   value="\${basedir}/SiteDieta/static"/>
   <property name="images"    		   value="\${basedir}/SiteDieta/images"/>
+  <property name="classes"    	   	   value="\${basedir}/SiteDieta/WEB-INF/classes"/>
   <property name="classes.inf"    	   value="\${basedir}/SiteDieta/WEB-INF/classes/META-INF"/>
-  <property name="local.workspace"    value="C:/Users/Paulo/Java/workspace"/>
+  <property name="local.workspace"     value="C:\Users\Paulo\Java\RepositorioSite"/>
   
   <!-- =================== BUILD: Create Directories ====================== -->
   <target name="init">
@@ -72,7 +73,7 @@
       <fileset dir="${local.workspace}/SiteDieta/WebContent/WEB-INF/lib"></fileset>
     </copy>
     <copy todir="${lib}/META-INF">
-      <fileset dir="${local.workspace}/SiteDieta/WebContent/WEB-INF/lib/META-INF/*"></fileset>
+      <fileset dir="${local.workspace}/SiteDieta/WebContent/WEB-INF/lib/META-INF"></fileset>
     </copy>
  		
 	<!-- Copiando web.xml-->
@@ -82,9 +83,14 @@
 		
 	<!-- Copiando persistence.xml-->
 	<copy todir="${classes.inf}">
-	  <fileset file="${local.workspace}/SiteDieta/src/META-INF"></fileset>
+	  <fileset file="${local.workspace}/SiteDieta/src/META-INF/persistence.xml"></fileset>
 	</copy>
- 		
+	
+	<!-- Copiando StripesResources.properties-->
+	<copy todir="${classes}">
+	  <fileset file="${local.workspace}/SiteDieta/src/META-INF/StripesResources.properties"></fileset>
+	</copy>
+	 		
 </target>
 
   <!-- ================= BUILD: Compile Server Components ================= -->
