@@ -91,7 +91,6 @@
 	<script src="/SiteDieta/static/js/bootstrap-carousel.js"></script>
 	<script src="/SiteDieta/static/js/bootstrap-typeahead.js"></script>
 	<script src="/SiteDieta/static/js/application.js"></script>
-	<script src="/SiteDieta/static/js/publicacaoDieta.js"></script>
     
 </body>
 </html>

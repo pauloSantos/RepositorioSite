@@ -30,33 +30,87 @@ function manipularCampos(idBtnMaisAlimento , idLabelAlimento, idCampoAlimento, i
 	}
 }
 
-function formatarHorario(hora){
-	var hora01 = ''; 
-	hora01 = hora01 + hora; 
-	if (hora01.length == 2){ 
-		hora01 = hora01 + ':'; 
+function manipularCamposSemBotao(idLabelAlimento, idCampoAlimento, idLabelQuantidade, idCampoQuantidade, idCampoMedida){
+	var labelAlimento = document.getElementById(idLabelAlimento);
+	var labelQuantidade = document.getElementById(idLabelQuantidade);
+	var inputAlimento = document.getElementById(idCampoAlimento);
+	var inputQuantidade = document.getElementById(idCampoQuantidade);
+	var inputMedida = document.getElementById(idCampoMedida);
 
-		var h = document.getElementById('horario');
-		h.value = hora01;
-	} 
+	var estiloLabelAlimento = labelAlimento.style;
+	var estiloInputAlimento = inputAlimento.style;
+	var estiloLabelQuantidade = labelQuantidade.style;
+	var estiloInputQuantidade = inputQuantidade.style;
+	var estiloInputMedida = inputMedida.style;
+
+	if(estiloLabelAlimento.display == 'none'){
+		estiloLabelAlimento.display = 'block';
+		estiloInputAlimento.display = 'block';
+		estiloLabelQuantidade.display = 'block';
+		estiloInputQuantidade.display = 'block';
+		estiloInputMedida.display = 'block';
+	}else{
+		estiloLabelAlimento.display = 'none';
+		estiloInputAlimento.display = 'none';
+		estiloLabelQuantidade.display = 'none';
+		estiloInputQuantidade.display = 'none';
+		estiloInputMedida.display = 'none';
+	}
 }
 
-function verificaHoraManha(){ 
-	var h = document.getElementById('horario');
-	hrs = (h.value.substring(0,2)); 
-	min = (h.value.substring(3,5)); 
+function manipularRefeicaoOpcional(idLabelRefeicaoOpcional){
+	var labelRefeicaoOpcional = document.getElementById(idLabelRefeicaoOpcional);
+	if(labelRefeicaoOpcional.style.display == 'none'){
+		labelRefeicaoOpcional.style.display = 'block';
+	}else{
+		labelRefeicaoOpcional.style.display = 'none';
+	}
+}
 
-	estado = ""; 
-	if ((hrs < 00 ) || (hrs > 11) || ( min < 00) ||( min > 59)){ 
-		estado = "errada"; 
+function formatarHorario(id, periodoDia){
+	var input = document.getElementById(id);
+	horaDigitada = input.value;
+	var horaFinal = ''; 
+
+	horaFinal = horaFinal + horaDigitada; 
+	if (horaFinal.length == 2){
+		horaFinal = horaFinal + ':'; 
+		input.value = horaFinal;
+	} 
+	verificaHora(input, periodoDia);
+}
+
+function verificaHora(element, periodoDia){ 
+	hrs = (element.value.substring(0,2)); 
+	min = (element.value.substring(3,5)); 
+	horaCorreta = "true";
+
+	minMinimo = 00;
+	minMaximo = 59;
+
+	if(periodoDia == 'manha'){
+		horaMinima = 00;
+		horaMaxima = 11;
+
+	}else if(periodoDia == 'tarde'){
+		horaMinima = 12;
+		horaMaxima = 17;
+
+	}else{
+		horaMinima = 18;
+		horaMaxima = 23;
+	}                
+
+	if ((hrs < horaMinima ) || (hrs > horaMaxima) || ( min < minMinimo) ||( min > minMaximo)){ 
+		horaCorreta = "false"; 
 	} 
 
-	if (h.value == "") { 
-		estado = "errada"; 
+	if (element.value == "") { 
+		horaCorreta = "false"; 
 	} 
 
-	if (estado == "errada") { 
-		h.value='';
-		h.focus(); 
+	if (horaCorreta == "false") { 
+		element.value='';
+		element.focus(); 
 	} 
 }
