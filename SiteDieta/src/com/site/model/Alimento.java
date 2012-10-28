@@ -1,34 +1,77 @@
 package com.site.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="alimento")
 public class Alimento {
 
-	private String nomeAlimento;
-	private int quantidade;
-	private String unidadeDeMedida;
+	@Id
+	@GeneratedValue
+	@Column(name="id_alimento")
+	private Long id;
 	
+	@ManyToOne
+	@JoinColumn(name="id_refeicao")
+	private Refeicao refeicao;
+	
+	@Column(name="alimento")
+	private String nomeAlimento;
+	
+	@Column(name="quantidade")
+	private int quantidadeAlimento;
+	
+	@Column(name="unidade_de_medida")
+	private String unidadeDeMedida;
+
 	public Alimento(String nomeAlimento, int quantidadeAlimento, String unidadeDeMedida){
 		this.nomeAlimento = nomeAlimento;
-		this.quantidade = quantidadeAlimento;
+		this.quantidadeAlimento = quantidadeAlimento;
 		this.unidadeDeMedida = unidadeDeMedida;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Refeicao getRefeicao() {
+		return refeicao;
+	}
+
+	public void setRefeicao(Refeicao refeicao) {
+		this.refeicao = refeicao;
+	}
+
 	public String getNomeAlimento() {
 		return nomeAlimento;
 	}
-	
+
 	public void setNomeAlimento(String nomeAlimento) {
 		this.nomeAlimento = nomeAlimento;
 	}
-	
-	public int getQuantidade() {
-		return quantidade;
+
+	public int getQuantidadeAlimento() {
+		return quantidadeAlimento;
 	}
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+
+	public void setQuantidadeAlimento(int quantidadeAlimento) {
+		this.quantidadeAlimento = quantidadeAlimento;
 	}
+
 	public String getUnidadeDeMedida() {
 		return unidadeDeMedida;
 	}
+
 	public void setUnidadeDeMedida(String unidadeDeMedida) {
 		this.unidadeDeMedida = unidadeDeMedida;
 	}

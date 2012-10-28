@@ -41,15 +41,77 @@ status varchar(20) NOT NULL,
 PRIMARY KEY (id));
 
 /* Menu geral */
-insert into menu_usuario values(id, 'Home', 'goHome.do', 'PADRAO', 1);
-insert into menu_usuario values(id, 'Estatisticas', '#', 'PADRAO', 2);
+insert into site.menu_usuario values(id, 'Home', '/SiteDieta/goHome.do', 'PADRAO', 1);
+insert into site.menu_usuario values(id, 'Estatisticas', '#', 'PADRAO', 2);
 
 /* Menu medico */
-insert into menu_usuario values(id, 'Home', 'goHome.do', 'MEDICO', 1);
-insert into menu_usuario values(id, 'Estatisticas', '#', 'MEDICO', 2);
-insert into menu_usuario values(id, 'Gerenciar Dietas', '#', 'MEDICO', 3);
+insert into site.menu_usuario values(id, 'Home', '/SiteDieta/goHome.do', 'MEDICO', 1);
+insert into site.menu_usuario values(id, 'Estatisticas', '#', 'MEDICO', 2);
 
 /* Menu adm */
-insert into menu_usuario values(id, 'Home', 'goHome.do', 'ADMIN', 1);
-insert into menu_usuario values(id, 'Estatisticas', '#', 'ADMIN', 2);
-insert into menu_usuario values(id, 'Gerenciar Registros', '/SiteDieta/gerenciamento', 'ADMIN', 3);
+insert into site.menu_usuario values(id, 'Home', '/SiteDieta/goHome.do', 'ADMIN', 1);
+insert into site.menu_usuario values(id, 'Estatisticas', '#', 'ADMIN', 2);
+insert into site.menu_usuario values(id, 'Gerenciar Registros', '/SiteDieta/gerenciamento', 'ADMIN', 3);
+
+/* Tabela Nutricional dos Alimentos */
+drop table if exists site.tabela_nutricional;
+create table site.tabela_nutricional ( 
+id_alimento bigint(20) not null auto_increment ,
+descricao varchar (80) not null,
+kilocaloria int (10) null,
+kilojoule int (10) null,
+proteina_grama decimal (10,4)  null,
+lipideos_grama decimal (10,4)  null,
+colesterol_miligrama decimal (10,4)  null,
+carboidrato_grama decimal(10,4) null,
+fibraAlimentar_grama decimal (10,4)  null,
+calcio_miligrama decimal (10,4)  null,
+magnesio_miligrama decimal(10,4) null,
+fosforo_miligrama decimal (10,4)  null,
+ferro_miligrama decimal (10,4)  null,
+sodio_miligrama decimal (10,4)  null,
+potassio_miligrama decimal (10,4)  null,
+zinco_miligrama decimal (10,4)  null,
+vitaminaC_miligrama decimal (10,4) default null,
+primary key (id_alimento)
+);
+
+/* Tabela das Dieta Cadastradas */
+drop table if exists site.dieta;
+create table site.dieta ( 
+id_dieta bigint(20) not null auto_increment,
+id_cadastro_medico bigint (20) not null,
+nome_dieta varchar (50) not  null unique,
+periodo_dieta int not null,
+primary key (id_dieta),
+FOREIGN KEY (id_cadastro_medico) REFERENCES cadastro_medico (id)
+);
+
+/* Tabela das Refeições */
+drop table if exists site.refeicao;
+create table site.refeicao( 
+id_refeicao bigint(20) not null auto_increment,
+id_dieta bigint (20) not null,
+horario time not  null,
+opcao_refeicao varchar(20) not null,
+primary key (id_refeicao),
+FOREIGN KEY (id_dieta) REFERENCES dieta (id_dieta)
+);
+
+/* Tabela dos Alimentos das Refeições */
+drop table if exists site.alimento;
+create table site.alimento( 
+id_alimento bigint(20) not null auto_increment,
+id_refeicao bigint (20) not null,
+alimento varchar(120) not  null,
+quantidade int null,
+unidade_de_medida varchar(30) null,
+primary key (id_alimento),
+FOREIGN KEY (id_refeicao) REFERENCES refeicao (id_refeicao)
+);
+
+/* Comando para Popular Tabela "tabela_nutricional" com arquivo .csm */
+LOAD DATA INFILE 'C:\MySQL\MySQLServer55\data\Tabela.csv' 
+INTO TABLE tabela_nutricional
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n';

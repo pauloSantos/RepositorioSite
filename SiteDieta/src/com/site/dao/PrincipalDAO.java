@@ -5,9 +5,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 
-public class PrincipalDAO {
+public abstract class PrincipalDAO {
 
-	EntityManager manager;
+	protected EntityManager manager;
 	
 	public PrincipalDAO() {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("site");
@@ -18,13 +18,13 @@ public class PrincipalDAO {
 		return manager;
 	}
 	
-	public void insert(Object obj){
+	public void inserir(Object obj){
 		manager.getTransaction().begin();
 		manager.persist(obj);
 		manager.getTransaction().commit();
 	}
 	
-	public void update(Object obj){
+	public void atualizar(Object obj){
 		manager.getTransaction().begin();
 		manager.merge(obj);
 		manager.getTransaction().commit();

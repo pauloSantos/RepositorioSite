@@ -1,0 +1,95 @@
+@CHARSET "ISO-8859-1";
+
+.inputAlimento {
+	margin-left: 10px;
+}
+
+.inputAlimentoSemBotao {
+	margin-left: 10px;
+}
+
+.inputQuantidade {
+	margin-left: 5px;
+}
+
+.inputQuantidadeSemBotao {
+	margin-left: 6px;
+}
+
+.inputHorario {
+	margin-left: 5px;
+}
+
+.labelHorario {
+	margin-left: 5px;
+	margin-right:5px;
+	
+}
+
+.labelRefeicao {
+	margin-left: 5px;
+	margin-right:5px;
+}
+
+.labelRefeicaoOpcional {
+	margin-top: 30px;
+	margin-left: 287px;
+}
+
+.labelAlimento {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.labelAlimentoSemBotao {
+	margin-left: 514px;
+	margin-right:5px;
+}
+
+.labelQuantidade {
+	margin-left: 10px;
+	margin-right:5px;
+}
+
+.labelQuantidadeSemBotao {
+	margin-left: 10px;
+	margin-right:5px;
+}
+
+.botaoMaisHorario {
+	margin-left: 30px
+}
+
+.botaoMaisRefeicao {
+	margin-left: 154.5px;
+}
+
+.botaoMaisAlimento {
+	margin-left: 486px;
+}
+
+.espacoSuperior {
+	margin-top: 40px;
+}
+
+.comboMedidas {
+	width: 90px;
+	margin-left: 5px;
+}
+
+.comboMedidasSemBotao {
+	width: 90px;
+	margin-left: 4px;
+}
+
+.mensagemSucesso{
+color: #009900;
+font-weight: bold;
+}
+
+.botaoSalvar{
+	margin-top: 50px;
+	margin-right: 72px;
+	height: 34px;
+	width: 60px;
+}

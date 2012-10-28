@@ -38,8 +38,8 @@ public class CadastroMedicoBusiness {
 				UsuarioDAO usuarioDAO = new UsuarioDAO();
 				CadastroMedico cadastroMedico = criarCadastroMedico(bean);
 				Usuario usuario = criarUsuario(bean, cadastroMedico);
-				cadastroMedicoDAO.insert(cadastroMedico);
-				usuarioDAO.insert(usuario);
+				cadastroMedicoDAO.inserir(cadastroMedico);
+				usuarioDAO.inserir(usuario);
 				textoResposta = RespostaCadastro.SUCESSO;
 
 			}else{
@@ -64,7 +64,7 @@ public class CadastroMedicoBusiness {
 		CadastroMedico cadastroMedico = dao.encontrarCadastroMedicoPorId(Long.parseLong(idCadastro));
 		if (opcaoEscolhida.equalsIgnoreCase(CONFIRMAR)) {
 			cadastroMedico.setStatusMedico(StatusMedico.CONFIRMADO);
-			dao.update(cadastroMedico);
+			dao.atualizar(cadastroMedico);
 
 		}else if(opcaoEscolhida.equalsIgnoreCase(REJEITAR)){
 			//TODO deletar cadastro
