@@ -39,7 +39,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
-    <url-pattern>/Autenticacao.do</url-pattern>
+    <url-pattern>/autenticacao</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>Home</servlet-name>
@@ -55,7 +55,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CadastroMedico</servlet-name>
-    <url-pattern>/goCadastro.do</url-pattern>
+    <url-pattern>/cadastro</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>Registro</servlet-name>

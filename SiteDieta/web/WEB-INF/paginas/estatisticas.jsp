@@ -17,52 +17,7 @@
 </head>
 <body>
 
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-				<a data-target=".nav-collapse" data-toggle="collapse"
-					class="btn btn-navbar"> <span class="icon-bar"></span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a>
-				<div class="nav-collapse">
-					<form action="" class="navbar-search pull-left">
-							<ul class="nav">
-								<input type="text" placeholder="Pesquisar"
-									class="search-query span2">
-								<input type="submit" value="Ir"
-									class="btn-inverse search-query span1">
-							</ul>
-					</form>
-					
-					<c:if test="${empty sessionScope.usuario }">
-					<ul class="nav pull-right">
-								<s:form beanclass="com.site.web.action.AutenticadorAction" class="navbar-search pull-left" method="get">
-									<span class= "label label-inverse">Login</span> 
-									<s:text name ="login" maxlength="20" size="5" class="search-query span2"/> 
-									<span class="label label-inverse">Senha</span> 
-									<s:password name="senha" class="search-query span2"/> 
-									<s:submit name="autenticar" value="Ok" class="btn-inverse search-query span1"/> 
-									<a name="link_cadastro" href="goCadastro.do" class="search-query">Cadastre-se</a>
-								</s:form>
-							</ul>
-					</c:if>
-					
-						<c:if test="${not empty sessionScope.usuario }">
-								<div class="btn-group nav pull-right">
-								<a class="btn btn-inverse" href="#"><i class="icon-user icon-white"></i> ${sessionScope.usuario.nomeUsuario}</a>
-								<a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-								<ul class="dropdown-menu">
-            						<li><a href="/SiteDieta/usuario/logout"><i class="i"></i> Sair</a></li>
-								</div>	
-							</ul>					
-						</c:if>
-					
-				</div>
-				<!-- /.nav-collapse -->
-			</div>
-		</div>
-		<!-- /navbar-inner -->
-	</div>
+	<jsp:include page="../templates/barraSuperior.jsp" />
 
 	<div class="row-fluid">
 	

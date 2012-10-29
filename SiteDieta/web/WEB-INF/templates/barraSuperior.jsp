@@ -47,13 +47,13 @@
 					
 						<c:if test="${empty sessionScope.usuario }">
 							<ul class="nav pull-right">
-								<form method="post" class="navbar-search pull-left" action="Autenticacao.do">
+								<form method="post" class="navbar-search pull-left" action="/SiteDieta/autenticacao">
 									<span class="label label-inverse">Login</span> 
 									<input name ="campo_login" type="text" maxlength="20" size="5" class="search-query span2"> 
 									<span class="label label-inverse">Senha</span> 
 									<input name="campo_senha" type="password" class="search-query span2"> 
 									<input type="submit"	value="Ok" class="btn-inverse search-query span1"> 
-									<a name="link_cadastro" href="goCadastro.do" class="search-query">Cadastre-se</a>
+									<a name="link_cadastro" href="/SiteDieta/cadastro" class="search-query">Cadastre-se</a>
 								</form>
 							</ul>
 						</c:if>
