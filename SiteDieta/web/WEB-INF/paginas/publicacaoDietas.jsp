@@ -26,17 +26,19 @@
 <div class="hero-unit">	
 <s:messages></s:messages>
 <s:errors/>
+<label class="label espacoSuperior" style="margin-top: -31px;margin-bottom: 30px;">Detalhes da dieta</label>
 <table>	
 <tr>
-<td><label class="label " style= "margin-right:5px" >Nome da dieta:</label></td>
+<td><label class="label " style= "margin-right:5px" >Nome :</label></td>
 <td><s:text id="nomeDieta" name="dieta.nomeDieta" ></s:text></td>	
 <td><label class="label" style="margin-right:5px;margin-left:300px;" >Dura&ccedil;&atilde;o:</label></td>
 <td><s:text id="duracaoDieta" name="dieta.periodoDieta" style="margin-right:100px;" class="input-mini"></s:text></td>
 </tr>
 </table>
+<hr>
 <div class="tab-content">
 <div class="tab-pane active" id="dietaManha">
-
+<label class="label espacoSuperior" style="margin-top: 15px;">Refei&ccedil;&otilde;es da manh&atilde;</label>
 <table>
 <tr>
 <td><label style="margin-right:5px;" class="espacoSuperior labelHorario label ">Hor&aacute;rio:</label></td>
@@ -248,10 +250,12 @@
 <!-- FIM DO TAB-PANE -->
 
 	<div class="tab-pane" id="dietaTarde">
+	<label class="label espacoSuperior" style="margin-top: 15px;">Refei&ccedil;&otilde;es da tarde</label>
 		<jsp:include page="alimentosTarde.jsp" />
 	</div>
 	
 	<div class="tab-pane" id="dietaNoite">
+	<label class="label espacoSuperior" style="margin-top: 15px;">Refei&ccedil;&otilde;es da noite</label>
 		<jsp:include page="alimentosNoite.jsp" />
 	</div>
 	

@@ -13,6 +13,8 @@
     <script type="text/javascript" src="/SiteDieta/static/js/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="/SiteDieta/static/js/downloadsPorGenero.js"></script>
     <script type="text/javascript" src="/SiteDieta/static/js/porcentagemDietasFinalizadas.js"></script>
+    <script type="text/javascript" src="/SiteDieta/static/js/estatisticas/downloadsPorIdade.js"></script>
+    <script type="text/javascript" src="/SiteDieta/static/js/estatisticas/dietasFinalizadasPorIdade.js"></script>
 
 </head>
 <body>
@@ -50,7 +52,7 @@
 			<table>
 			<tr>
 				<td><div id="chart_downloads_genero"></div></td>
-				<td><div id="chart_dietas_completas"></div></td>
+				<td><div id="chart_finalizadas_genero"></div></td>
 			</tr>
 			</table>
 			</div>
@@ -59,10 +61,12 @@
 	
 			<div class="tab-pane" id="dietasPorIdade">
 	
-				Total de downloads X Idade
-		
-				Total Dietas Concluidas X Idade
-		
+			<table>
+			<tr>
+				<td><div id="chart_downloads_idade"></div></td>
+				<td><div id="chart_finalizadas_idade"></div></td>
+			</tr>
+			</table>
 			</div>
 			</div>
 		</div>

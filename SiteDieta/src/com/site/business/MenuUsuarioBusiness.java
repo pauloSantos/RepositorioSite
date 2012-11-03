@@ -9,7 +9,7 @@ public class MenuUsuarioBusiness {
 
 	public List<MenuUsuario> getListaMenusPorUsuario(String tipoUsuario){
 		MenuUsuarioDAO menuDAO = new MenuUsuarioDAO();
-		List<MenuUsuario> menuUsuarioList = menuDAO.encontrarPorTipoUsuario(tipoUsuario);
-		return menuUsuarioList;
+		List<MenuUsuario> listaMenuUsuario = menuDAO.encontrarPorTipoUsuario(tipoUsuario);
+		return listaMenuUsuario;
 	}
 }

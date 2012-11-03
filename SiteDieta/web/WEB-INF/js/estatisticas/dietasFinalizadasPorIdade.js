@@ -6,7 +6,7 @@
       
     function drawChart() {
       var jsonData = $.ajax({
-          url: "http://localhost:8080/SiteDieta/resource/estatisticas/dietas/completas/genero",
+          url: "http://localhost:8080/SiteDieta/resource/estatisticas/dietas/completas/idade",
           dataType:"json",
           async: false
           }).responseText;
@@ -14,12 +14,12 @@
       // Create our data table out of JSON data loaded from server.
       var data = new google.visualization.DataTable(jsonData);
 
-      var options = {'title':'Dietas finalizadas por genero',
-              'width':500,
+      var options = {'title':'Dietas finalizadas por idade',
+              'width':400,
               'height':300};
       
       
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.ColumnChart(document.getElementById('chart_finalizadas_genero'));
+      var chart = new google.visualization.PieChart(document.getElementById('chart_finalizadas_idade'));
       chart.draw(data, options);
     }

@@ -115,3 +115,22 @@ LOAD DATA INFILE 'C:\MySQL\MySQLServer55\data\Tabela.csv'
 INTO TABLE tabela_nutricional
 FIELDS TERMINATED BY ';'
 LINES TERMINATED BY '\n';
+
+create database mobile;
+
+/* Tabela das Refeições */
+drop table if exists mobile.download_dieta;
+create table mobile.download_dieta( 
+id bigint(20) not null auto_increment,
+id_imei bigint (20) not null,
+data_solicitacao datetime not  null,
+data_ultima_atualizacao datetime not null,
+nome varchar (80) not null,
+idade int (10) not null,
+genero varchar (20) not null,
+altura double (3, 2) not null,
+peso   double (5, 2) not null,
+email varchar (40) null,
+status_dieta varchar(20) not null, 
+primary key (id,id_imei)
+);

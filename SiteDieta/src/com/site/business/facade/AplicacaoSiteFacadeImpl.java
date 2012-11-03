@@ -5,6 +5,8 @@ import java.util.Map;
 
 import com.site.business.CadastroMedicoBusiness;
 import com.site.business.bean.CadastroMedicoBean;
+import com.site.business.estatisticas.FabricaGeradorEstatisticas;
+import com.site.business.estatisticas.IGeradorEstatisticas;
 import com.site.model.CadastroMedico;
 
 public class AplicacaoSiteFacadeImpl implements AplicacaoSiteFacade {
@@ -30,5 +32,12 @@ public class AplicacaoSiteFacadeImpl implements AplicacaoSiteFacade {
 	public void atualizarStatusCadastroMedico(String idCadastro, String opcaoEscolhida) {
 		CadastroMedicoBusiness business = new CadastroMedicoBusiness();
 		business.atualizarCadastrosMedico(idCadastro, opcaoEscolhida);
+	}
+
+	@Override
+	public String gerarEstatisticas(String tipoGerador) {
+		FabricaGeradorEstatisticas fabrica = new FabricaGeradorEstatisticas();
+		IGeradorEstatisticas gerador = fabrica.getGerador(tipoGerador);
+    	return gerador.gerar();
 	}
 }

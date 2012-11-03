@@ -13,4 +13,5 @@ public interface AplicacaoSiteFacade {
 	void publicarDieta();
 	List<CadastroMedico> visualizarCadastrosPendentes();
 	void atualizarStatusCadastroMedico(String idCadastro, String opcaoEscolhida);
+	String gerarEstatisticas(String tipoGerador);
 }

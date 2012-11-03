@@ -14,7 +14,7 @@
       // Create our data table out of JSON data loaded from server.
       var data = new google.visualization.DataTable(jsonData);
 
-      var options = {'title':'Dietas baixadas X Genero',
+      var options = {'title':'Dietas baixadas por genero',
               'width':400,
               'height':300};
       
