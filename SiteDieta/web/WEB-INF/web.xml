@@ -110,14 +110,6 @@
     <url-pattern>/gerenciamento</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>GerenciadorCadastro</servlet-name>
-    <servlet-class>com.site.web.GerenciamentoCadastro</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>GerenciadorCadastro</servlet-name>
-    <url-pattern>/atualizarCadastro.do</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>GerenciadorDietas</servlet-name>
     <servlet-class>/SiteDieta/WEB-INF/paginas/gerenciamentoDietas.jsp</servlet-class>
   </servlet>

@@ -29,11 +29,6 @@ public class GeradorEstatisticasDownloadsPorGenero implements IGeradorEstatistic
 		double porcentagemHomens = getPorcentagem(Genero.M);
 		double porcentagemMulheres = getPorcentagem(Genero.F);
 
-		System.out.println("===============================");
-		System.out.println(porcentagemMulheres);
-		System.out.println("===============================");
-		System.out.println(porcentagemMulheres);
-		
 		List<Map<String, Object>> rows = criarLinhasDownloadsPorGenero(porcentagemHomens, porcentagemMulheres);
 
 		Map<String, Object> table = criarTabela(cols, rows);
@@ -76,6 +71,7 @@ public class GeradorEstatisticasDownloadsPorGenero implements IGeradorEstatistic
 		return definicaoColunas;
 	}
 	
+	@SuppressWarnings("unchecked")
 	private List<Map<String, Object>> criarLinhasDownloadsPorGenero(double porcentagemHomes, double porcentagemMulheres) {
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("v", "Homens");
@@ -103,6 +99,7 @@ public class GeradorEstatisticasDownloadsPorGenero implements IGeradorEstatistic
 		return criarLinhas(arrayList, arrayList2);
 	}
 
+	@SuppressWarnings("unchecked")
 	private List<Map<String, Object>> criarLinhas(List<Map<String, Object>>... lista) {
 		List<Map<String, Object>> linhas = new ArrayList<Map<String, Object>>();
 		for (List<Map<String, Object>> listaMapas : lista) {

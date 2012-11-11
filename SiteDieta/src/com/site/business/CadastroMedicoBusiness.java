@@ -16,8 +16,6 @@ import com.site.model.Usuario;
 
 public class CadastroMedicoBusiness {
 
-	private static final String REJEITAR = "rejeitar";
-	private static final String CONFIRMAR = "confirmar";
 	private static final String RESPOSTA = "resposta";
 	private static final String DADOS_VALIDOS = "dadosValidos";
 
@@ -59,15 +57,31 @@ public class CadastroMedicoBusiness {
 		}
 	}
 
-	public void atualizarCadastrosMedico(String idCadastro, String opcaoEscolhida){
+	public boolean confirmarCadastro(Long idCadastro){
 		CadastroMedicoDAO dao = new CadastroMedicoDAO();
-		CadastroMedico cadastroMedico = dao.encontrarCadastroMedicoPorId(Long.parseLong(idCadastro));
-		if (opcaoEscolhida.equalsIgnoreCase(CONFIRMAR)) {
-			cadastroMedico.setStatusMedico(StatusMedico.CONFIRMADO);
+		CadastroMedico cadastroMedico = dao.encontrarCadastroMedicoPorId(idCadastro);
+		cadastroMedico.setStatusMedico(StatusMedico.CONFIRMADO);
+		try {
 			dao.atualizar(cadastroMedico);
-
-		}else if(opcaoEscolhida.equalsIgnoreCase(REJEITAR)){
-			//TODO deletar cadastro
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getStackTrace());
+			return false;
+		}
+	}
+	
+	public boolean rejeitarCadastro(Long idCadastro){
+		CadastroMedicoDAO cadastroMedicoDAO = new CadastroMedicoDAO();
+		CadastroMedico cadastroMedico = cadastroMedicoDAO.encontrarCadastroMedicoPorId(idCadastro);
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		
+		try {
+			usuarioDAO.deletarUsuario(cadastroMedico);
+			cadastroMedicoDAO.deletarCadastro(idCadastro);
+			return true;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
 		}
 	}
 

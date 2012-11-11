@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="s" uri="http://stripes.sourceforge.net/stripes.tld"%>    
+<%@taglib prefix="s" uri="http://stripes.sourceforge.net/stripes.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,9 +23,9 @@
     	<li><a href="#dietaTarde" data-toggle="tab">Tarde</a></li>
     	<li><a href="#dietaNoite" data-toggle="tab">Noite</a></li>
 	</ul>
-<div class="hero-unit">	
 <s:messages></s:messages>
 <s:errors/>
+<div class="hero-unit">	
 <label class="label espacoSuperior" style="margin-top: -31px;margin-bottom: 30px;">Detalhes da dieta</label>
 <table>	
 <tr>

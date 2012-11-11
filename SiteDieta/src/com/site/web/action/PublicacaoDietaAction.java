@@ -20,6 +20,7 @@ import net.sourceforge.stripes.validation.ValidationMethod;
 
 import com.site.business.IPublicacaoDieta;
 import com.site.business.PublicacaoDietaBusiness;
+import com.site.dao.DietaDAO;
 import com.site.model.Dieta;
 import com.site.model.Usuario;
 import com.site.web.enums.Mensagens;
@@ -95,9 +96,21 @@ public class PublicacaoDietaAction extends SiteActionBean {
 			ValidationError error = new SimpleError(Mensagens.UNIDADE_DE_MEDIDA_OBRIGATORIA.getMensagem());
 			errors.add("listaUnidadeDeMedida" , error );
 		}
-
+		
+		if(isDietaJaExiste()){
+			ValidationError error = new SimpleError(Mensagens.DIETA_JA_EXISTENTE.getMensagem());
+			errors.add("dieta" , error );
+		}
+		
+		
 	}
 
+	private boolean isDietaJaExiste(){
+		DietaDAO dietaDAO = new DietaDAO();
+		Dieta dietaEncontrada = dietaDAO.encontrarDietaPorNomeExato(dieta.getNomeDieta());
+		
+		return dietaEncontrada != null;
+	}
 	private boolean isAlimentosObrigatoriosPreenchidos() {
 		PublicacaoDietaChaves[] listaChaves = PublicacaoDietaChaves.values();
 		List<PublicacaoDietaChaves> chavesManha = getChavesPeriodo(listaChaves, "Manha");

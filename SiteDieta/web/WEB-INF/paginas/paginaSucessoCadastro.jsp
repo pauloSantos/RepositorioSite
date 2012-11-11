@@ -14,7 +14,7 @@
 		<center>
 		<div class="alert alert-success span12" >
 			<strong>Parabéns!!!</strong>
-			"Seu cadastro foi realizado com sucesso, em breve confirmaremos seu dados e iremos habilitar seu login no site "
+			Seu cadastro foi realizado com sucesso, em breve confirmaremos seu dados e iremos habilitar seu login no site
 		</div>
 		</center>
 	

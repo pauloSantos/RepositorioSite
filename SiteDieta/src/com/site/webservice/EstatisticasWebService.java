@@ -8,15 +8,15 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
+import com.site.business.facade.IAplicacaoSiteFacade;
 import com.site.business.facade.AplicacaoSiteFacade;
-import com.site.business.facade.AplicacaoSiteFacadeImpl;
 
 
 
 @Path("/estatisticas")
 public class EstatisticasWebService {
 
-	AplicacaoSiteFacade fachada = new AplicacaoSiteFacadeImpl();
+	IAplicacaoSiteFacade fachada = new AplicacaoSiteFacade();
 	
 	@Context
 	UriInfo uriInfo;

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.site.business.facade.IAplicacaoSiteFacade;
 import com.site.business.facade.AplicacaoSiteFacade;
-import com.site.business.facade.AplicacaoSiteFacadeImpl;
 import com.site.model.CadastroMedico;
 
 public class BuscadorMedico extends HttpServlet {
@@ -20,7 +20,7 @@ public class BuscadorMedico extends HttpServlet {
 	}
 	
 	public List<CadastroMedico> getCadastrosPendentes(){
-		AplicacaoSiteFacade facade = new AplicacaoSiteFacadeImpl();
+		IAplicacaoSiteFacade facade = new AplicacaoSiteFacade();
 		return facade.visualizarCadastrosPendentes();
 	}
 }

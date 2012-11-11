@@ -38,15 +38,10 @@
 		<ul class="nav nav-tabs">
     		<li class="active"><a href="#dietasPorGenero" data-toggle="tab">Por g&ecirc;nero</a></li>
     		<li><a href="#dietasPorIdade" data-toggle="tab">Por idade</a></li>
-    		<li><a href="#dietaConcluidas" data-toggle="tab">Total dietas conclu&iacute;das</a></li>
 	
 		</ul>
 		
 		<div class="tab-content">
-			<div class="tab-pane active" id="dietaConcluidas">
-	
-			</div>
-	
 			<div class="tab-pane" id="dietasPorGenero">
 			
 			<table>

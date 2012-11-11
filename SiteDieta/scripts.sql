@@ -83,8 +83,7 @@ id_dieta bigint(20) not null auto_increment,
 id_cadastro_medico bigint (20) not null,
 nome_dieta varchar (50) not  null unique,
 periodo_dieta int not null,
-primary key (id_dieta),
-FOREIGN KEY (id_cadastro_medico) REFERENCES cadastro_medico (id)
+primary key (id_dieta)
 );
 
 /* Tabela das Refeições */

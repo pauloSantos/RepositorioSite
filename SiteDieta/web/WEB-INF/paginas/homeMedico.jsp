@@ -15,22 +15,23 @@
               <div class="item">
                 <img src="static/img/imagem_maca.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>First Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <h4>Consultas</h4>
+							<p>Est&aacute; em d&uacute;vida de quantas calorias esta ingerindo nesta alimenta&ccedil;&atilde;o, n&atilde;o se preocupe nos lhe mostramos
                 </div>
               </div>
               <div class="item active">
                 <img src="static/img/celular.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Second Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <h4>Confian&ccedil;a</h4>
+							<p>Chega de se preocupar se as suas dietas foram preescritas por algu&eacute;m de confian&ccedil;a, aproveite as facilidades da era mobile e 
+								adquira agora as melhores dietas cadastradas por m&eacute;dicos conceituados</p>
                 </div>
               </div>
               <div class="item">
                 <img src="static/img/academia.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>Third Thumbnail label</h4>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                  <h4>Portabilidade</h4>
+							<p>Est&aacute; no treino e n&atilde;o se lembra o que voc&ecirc; deve comer depois, n&atilde;o tem problema com nosso aplicativo a sua dieta esta sempre com voc&ecirc;</p>
                 </div>
               </div>
             </div>

@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.site.business.bean.CadastroMedicoBean;
 import com.site.business.enums.RespostaCadastro;
+import com.site.business.facade.IAplicacaoSiteFacade;
 import com.site.business.facade.AplicacaoSiteFacade;
-import com.site.business.facade.AplicacaoSiteFacadeImpl;
 
 public class CadastroMedico extends HttpServlet{
 
@@ -24,7 +24,7 @@ public class CadastroMedico extends HttpServlet{
 
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		AplicacaoSiteFacade facade = new AplicacaoSiteFacadeImpl();
+		IAplicacaoSiteFacade facade = new AplicacaoSiteFacade();
 		CadastroMedicoBean bean = criarCadastroMedicoBean(request);
 		Map<String, Object> respostaCadastro = facade.cadastrarMedico(bean);
 

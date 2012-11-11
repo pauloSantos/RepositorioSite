@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="s" uri="http://stripes.sourceforge.net/stripes.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -28,11 +29,13 @@ function executar(opcaoEscolhida, cadastroEscolhido){
 	<div class="row-fluid">
 		<jsp:include page="../templates/menuLateralAdmin.jsp" />
 		<div class="span6">
+		<s:messages></s:messages>
+		<s:errors></s:errors>
 			<jsp:useBean id="web"
 				class="com.site.web.BuscadorMedico" />
 			<div class="accordion" id="accordion2">
 				<c:forEach var="cadastro" items="${web.cadastrosPendentes}">
-					<form action="atualizarCadastro.do" method="post">
+					<s:form beanclass="com.site.web.action.GerenciamentoCadastroAction"  method="post">
 						<div class="control-group">
 							<div class="controls">
 								<div class="accordion-group">
@@ -57,13 +60,13 @@ function executar(opcaoEscolhida, cadastroEscolhido){
 													</tr>
 													<tr>
 														<td>Tipo de Registro: ${cadastro.tipoRegistroMedico}</td>
-														<td>Numero Profissional:
+														<td>N&uacute;mero Profissional:
 															${cadastro.numeroRegistroMedico}</td>
 														<td></td>
 													</tr>
 													<tr>
 														<td>Endere&ccedil;o: ${cadastro.enderecoConsultorio}</td>
-														<td>Numero: ${cadastro.numeroConsultorio}</td>
+														<td>N&uacute;mero: ${cadastro.numeroConsultorio}</td>
 														<td>Bairro: ${cadastro.bairroConsultorio}</td>
 													</tr>
 													<tr>
@@ -79,29 +82,22 @@ function executar(opcaoEscolhida, cadastroEscolhido){
 												</tbody>
 											</table>
 											<p>
-												<input name="opcao_escolhida" type="submit" value="confirmar" class="btn btn-success"/>
-												<input name="opcao_escolhida" type="submit" value="rejeitar" class="btn btn-danger"/>
+												<s:submit name="confirmar" value="confirmar" class="btn btn-success"/>
+												<s:submit name="rejeitar" value="rejeitar" class="btn btn-danger"/>
 											</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<input name="cadastro_escolhido" value="${cadastro.id}" type="hidden" />
-					</form>
+						<s:hidden name="cadastroEscolhido" value="${cadastro.id}"/>
+					</s:form>
 				</c:forEach>
 			</div>
 			<!-- /accordion -->
 			
 		</div>
 		<!-- /span6 -->
-		<c:if test="${not empty requestScope.mensagemSucesso }">
-			<div class="alert alert-success span2" >
-			<center>
-				<strong>${requestScope.mensagemSucesso}</strong>
-			</center>
-			</div>
-		</c:if>	
 	</div>
 	<!-- /.row-fluid -->
 

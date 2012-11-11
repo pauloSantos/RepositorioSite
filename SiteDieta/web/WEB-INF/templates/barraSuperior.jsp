@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<%@taglib prefix="s" uri="http://stripes.sourceforge.net/stripes.tld"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -30,38 +31,36 @@
 	<!-- menu header INICIO -->
 	<div class="navbar">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="container" style="height: 42px;">
 				<a data-target=".nav-collapse" data-toggle="collapse"
 					class="btn btn-navbar"> <span class="icon-bar"></span> <span
 					class="icon-bar"></span> <span class="icon-bar"></span>
 				</a>
 				<div class="nav-collapse">
-					<form action="" class="navbar-search pull-left">
+				<s:form beanclass="com.site.web.action.PesquisadorMedicoAction" method="get">
 							<ul class="nav">
-								<input type="text" placeholder="Pesquisar"
-									class="search-query span2">
-								<input type="submit" value="Ir"
-									class="btn-inverse search-query span1">
+								<s:text name="nomeDieta" class="search-query span2" style=" position: relative; bottom: 11px;"/>
+									<s:submit  name="pesquisar" value="Ir" class="btn-inverse search-query span1" style=" position: relative; bottom: 11px;"></s:submit>
 							</ul>
-					</form>
+					</s:form>
 					
 						<c:if test="${empty sessionScope.usuario }">
 							<ul class="nav pull-right">
 								<form method="post" class="navbar-search pull-left" action="/SiteDieta/autenticacao">
-									<span class="label label-inverse">Login</span> 
-									<input name ="campo_login" type="text" maxlength="20" size="5" class="search-query span2"> 
-									<span class="label label-inverse">Senha</span> 
-									<input name="campo_senha" type="password" class="search-query span2"> 
-									<input type="submit"	value="Ok" class="btn-inverse search-query span1"> 
-									<a name="link_cadastro" href="/SiteDieta/cadastro" class="search-query">Cadastre-se</a>
+									<span class="label label-inverse" style=" position: relative; bottom: 16px;">Login</span>  
+									<input name ="campo_login" type="text" maxlength="20" size="5" class="search-query span2" style=" position: relative; bottom: 16px;"> 
+									<span class="label label-inverse" style=" position: relative; bottom: 16px;">Senha</span> 
+									<input name="campo_senha" type="password" class="search-query span2" style=" position: relative; bottom: 16px;"> 
+									<input type="submit"	value="Ok" class="btn-inverse search-query span1" style=" position: relative; bottom: 16px;"> 
+									<a name="link_cadastro" href="/SiteDieta/cadastro" class="search-query" style=" position: relative; bottom: 16px;">Cadastre-se</a>
 								</form>
 							</ul>
 						</c:if>
 						<c:if test="${not empty sessionScope.usuario }">
 								<div class="btn-group nav pull-right">
-								<a class="btn btn-inverse" href="#"><i class="icon-user icon-white"></i> ${sessionScope.usuario.nomeUsuario}</a>
-								<a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-								<ul class="dropdown-menu">
+								<a class="btn btn-inverse" href="#" style=" position: relative; bottom: 16px;"><i class="icon-user icon-white"></i> ${sessionScope.usuario.nomeUsuario}</a>
+								<a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#" style=" position: relative; bottom: 16px;"><span class="caret"></span></a>
+								<ul class="dropdown-menu" style="top: 23px;">
             						<li><a href="/SiteDieta/usuario/logout"><i class="i"></i> Sair</a></li>
 								</div>	
 							</ul>					

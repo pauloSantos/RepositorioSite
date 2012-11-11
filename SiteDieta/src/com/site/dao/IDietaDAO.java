@@ -8,4 +8,6 @@ import com.site.model.Dieta;
 public interface IDietaDAO {
 
 	List<Dieta> encontrarDietaPorCadastroMedico(CadastroMedico cadastroMedico);
+	List<Dieta> encontrarDietaPorNome(String nomeDieta);
+	Dieta encontrarDietaPorNomeExato(String nomeDieta);
 }
