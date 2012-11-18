@@ -36,7 +36,6 @@ public class GeradorEstatisticasDietasFinalizadasPorGenero implements IGeradorEs
 
 		Map<String, Object> table = criarTabela(cols, rows);
 
-
 		return gson.toJson(table); 
 	}
 

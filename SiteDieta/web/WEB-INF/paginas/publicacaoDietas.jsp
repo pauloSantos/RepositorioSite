@@ -66,8 +66,13 @@
 <td>
 <s:select id="medidas1" name="listaUnidadeDeMedida.alimentoManha1" class="comboMedidas">
   <option></option>
+  <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -85,8 +90,13 @@
 <td>
 <s:select id="medidas2" name="listaUnidadeDeMedida.alimentoManha2"  class="comboMedidas" style="display: none" >
   <option></option>
+   <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -104,8 +114,13 @@
 <td>
 <s:select id="medidas3" name="listaUnidadeDeMedida.alimentoManha3"  class="comboMedidas" style="display: none">
   <option></option>
+ <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -123,8 +138,13 @@
 <td>
 <s:select id="medidas4" name="listaUnidadeDeMedida.alimentoManha4"  class="comboMedidas" style="display: none">
   <option></option>
+   <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -139,8 +159,13 @@
 <td>
 <s:select id="medidas5" name="listaUnidadeDeMedida.alimentoManha5"  class="comboMedidasSemBotao" style="display: none">
   <option></option>
+   <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -166,8 +191,13 @@
 <td>
 <s:select id="medidas6" name="listaUnidadeDeMedida.alimentoOpcionalManha6" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -185,8 +215,13 @@
 <td>
 <s:select id="medidas7" name="listaUnidadeDeMedida.alimentoOpcionalManha7" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -204,8 +239,13 @@
 <td>
 <s:select id="medidas8" name="listaUnidadeDeMedida.alimentoOpcionalManha8" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -223,8 +263,13 @@
 <td>
 <s:select id="medidas9" name="listaUnidadeDeMedida.alimentoOpcionalManha9" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -239,8 +284,13 @@
 <td>
 <s:select id="medidas10" name="listaUnidadeDeMedida.alimentoOpcionalManha10"  class="comboMedidasSemBotao" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>

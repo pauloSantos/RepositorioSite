@@ -33,8 +33,13 @@
 <td>
 <s:select id="medidasNoite1" name="listaUnidadeDeMedida.alimentoNoite1" class="comboMedidas">
   <option></option>
+  <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -52,8 +57,13 @@
 <td>
 <s:select id="medidasNoite2" name="listaUnidadeDeMedida.alimentoNoite2"  class="comboMedidas" style="display: none" >
   <option></option>
+  <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -71,8 +81,13 @@
 <td>
 <s:select id="medidasNoite3" name="listaUnidadeDeMedida.alimentoNoite3"  class="comboMedidas" style="display: none">
   <option></option>
+  <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -90,8 +105,13 @@
 <td>
 <s:select id="medidasNoite4" name="listaUnidadeDeMedida.alimentoNoite4"  class="comboMedidas" style="display: none">
   <option></option>
+  <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -111,8 +131,13 @@
 <td>
 <s:select id="medidasNoite5" name="listaUnidadeDeMedida.alimentoNoite5"  class="comboMedidasSemBotao" style="display: none">
   <option></option>
+  <option>unidade</option>
   <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -140,8 +165,13 @@
 <td>
 <s:select id="medidasNoite6" name="listaUnidadeDeMedida.alimentoOpcionalNoite6" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -159,8 +189,13 @@
 <td>
 <s:select id="medidasNoite7" name="listaUnidadeDeMedida.alimentoOpcionalNoite7" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -178,8 +213,13 @@
 <td>
 <s:select id="medidasNoite8" name="listaUnidadeDeMedida.alimentoOpcionalNoite8" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -197,8 +237,13 @@
 <td>
 <s:select id="medidasNoite9" name="listaUnidadeDeMedida.alimentoOpcionalNoite9" class="comboMedidas" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
@@ -214,8 +259,13 @@
 <td>
 <s:select id="medidasNoite10" name="listaUnidadeDeMedida.alimentoOpcionalNoite10"  class="comboMedidasSemBotao" style="display: none">
   <option></option>
-<option>ml</option>
+<option>unidade</option>
+  <option>ml</option>
   <option>gramas</option>
+  <option>x&iacute;cara</option>
+  <option>colher (sopa)</option>
+  <option>colher (sobremesa)</option>
+  <option>fatia</option>
 </s:select>
 </td>
 </tr>
