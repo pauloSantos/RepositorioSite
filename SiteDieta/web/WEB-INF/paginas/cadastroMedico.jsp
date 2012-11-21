@@ -47,7 +47,7 @@
 					<label>Cidade:</label>
 					<input name="cidade_clinica" type="text" class="input-medium">
 					<label>Estado:</label>
-					<input name="estado_clinica" type="text" class="input-mini">
+					<input name="estado_clinica" type="text" maxlength="2" class="input-mini">
 					<label>CNPJ:</label>
 					<input name="cnpj_clinica" type="text" maxlength="15" class="input-medium">
 					<br></br>

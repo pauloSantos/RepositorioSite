@@ -31,7 +31,7 @@
 <tr>
 <td><label class="label " style= "margin-right:5px" >Nome :</label></td>
 <td><s:text id="nomeDieta" name="dieta.nomeDieta" ></s:text></td>	
-<td><label class="label" style="margin-right:5px;margin-left:300px;" >Dura&ccedil;&atilde;o:</label></td>
+<td><label class="label" style="margin-right:5px;margin-left:206px;" >Dura&ccedil;&atilde;o:</label></td>
 <td><s:text id="duracaoDieta" name="dieta.periodoDieta" style="margin-right:100px;" class="input-mini"></s:text></td>
 </tr>
 </table>

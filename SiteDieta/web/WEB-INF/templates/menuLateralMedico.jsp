@@ -21,7 +21,7 @@
 				
 				<li><s:link beanclass="com.site.web.action.GerenciadorDietasAction">
 				<s:param name="identificacaoUsuario" value="${sessionScope.usuario.id}"/>
-				Gerenciador Dietas
+				Gerenciamento Dietas
 				</s:link></li>
 			</ul>
 		</div>
