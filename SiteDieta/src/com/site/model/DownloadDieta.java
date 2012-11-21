@@ -24,6 +24,9 @@ public class DownloadDieta {
 	@Column(name="id_imei")
 	private int imei;
 	
+	@Column(name="id_dieta")
+	private Integer idDieta;
+	
 	@Column(name="data_solicitacao")
 	private Date dataSolicitacao;
 	
@@ -64,6 +67,12 @@ public class DownloadDieta {
 	}
 	public void setImei(int imei) {
 		this.imei = imei;
+	}
+	public Integer getIdDieta() {
+		return idDieta;
+	}
+	public void setIdDieta(Integer idDieta) {
+		this.idDieta = idDieta;
 	}
 	public Date getDataSolicitacao() {
 		return dataSolicitacao;

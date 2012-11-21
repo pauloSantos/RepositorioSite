@@ -1,29 +1,5 @@
 create database site;
 
-drop table if exists site.usuario;
-create table site.usuario(
-id bigint(20) NOT NUll AUTO_INCREMENT,
-login varchar(20) NOT NULL,
-senha varchar(255) NOT NULL,
-tipo varchar(20) NOT NULL,
-cad_medico_id bigint(20) DEFAULT NULL,
-PRIMARY KEY (id), 
-UNIQUE KEY (login));
-
-/* Inserindo usuario administrador do sistema */
-insert into site.usuario values(id,'paulo.santos', '123Mudar', 'ADMIN', null);
-
-
-drop table if exists site.menu_usuario;
-create table site.menu_usuario(
-id bigint(20) NOT NUll AUTO_INCREMENT,
-nome_menu varchar(100) NOT NULL,
-caminho varchar(255) NOT NULL, 
-tipo_usuario varchar(20) NOT NULL,
-posicao bigint(2) NOT NULL, 
-PRIMARY KEY (id), 
-UNIQUE KEY (nome_menu, tipo_usuario));
-
 drop table if exists site.cadastro_medico;
 create table site.cadastro_medico(
 id bigint(20) NOT NUll AUTO_INCREMENT,
@@ -39,6 +15,31 @@ estado_consultorio varchar(2),
 cnpj_consultorio varchar(20),
 status varchar(20) NOT NULL,
 PRIMARY KEY (id));
+
+drop table if exists site.usuario;
+create table site.usuario(
+id bigint(20) NOT NUll AUTO_INCREMENT,
+login varchar(20) NOT NULL,
+senha varchar(255) NOT NULL,
+tipo varchar(20) NOT NULL,
+cad_medico_id bigint(20) DEFAULT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (cad_medico_id) REFERENCES cadastro_medico (id),
+UNIQUE KEY (login));
+
+/* Inserindo usuario administrador do sistema */
+insert into site.usuario values(id,'paulo.santos', '123Mudar', 'ADMIN', null);
+
+
+drop table if exists site.menu_usuario;
+create table site.menu_usuario(
+id bigint(20) NOT NUll AUTO_INCREMENT,
+nome_menu varchar(100) NOT NULL,
+caminho varchar(255) NOT NULL, 
+tipo_usuario varchar(20) NOT NULL,
+posicao bigint(2) NOT NULL, 
+PRIMARY KEY (id), 
+UNIQUE KEY (nome_menu, tipo_usuario));
 
 /* Menu geral */
 insert into site.menu_usuario values(id, 'Home', '/SiteDieta/goHome.do', 'PADRAO', 1);
@@ -109,12 +110,6 @@ primary key (id_alimento),
 FOREIGN KEY (id_refeicao) REFERENCES refeicao (id_refeicao)
 );
 
-/* Comando para Popular Tabela "tabela_nutricional" com arquivo .csm */
-LOAD DATA INFILE 'C:\MySQL\MySQLServer55\data\Tabela.csv' 
-INTO TABLE tabela_nutricional
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\n';
-
 create database mobile;
 
 /* Tabela das Refeições */
@@ -122,14 +117,15 @@ drop table if exists mobile.download_dieta;
 create table mobile.download_dieta( 
 id bigint(20) not null auto_increment,
 id_imei bigint (20) not null,
+id_dieta bigint(20) not null,
 data_solicitacao datetime not  null,
 data_ultima_atualizacao datetime not null,
 nome varchar (80) not null,
 idade int (10) not null,
 genero varchar (20) not null,
-altura double (3, 2) not null,
-peso   double (5, 2) not null,
+altura bigint (3) not null,
+peso   bigint (3) not null,
 email varchar (40) null,
-status_dieta varchar(20) not null, 
-primary key (id,id_imei)
-);
+status_dieta varchar(20) not null,
+PRIMARY KEY (id),
+UNIQUE KEY (id,id_imei));

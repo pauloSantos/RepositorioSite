@@ -36,6 +36,8 @@ public class GeradorEstatisticasDownloadsPorIdade implements IGeradorEstatistica
 
 		Map<String, Object> tabela = criarTabela(colunas, linhas);
 
+		downloadDietaDAO.getEntityManager().getEntityManagerFactory().close();
+		
 		return gson.toJson(tabela); 
 	}
 

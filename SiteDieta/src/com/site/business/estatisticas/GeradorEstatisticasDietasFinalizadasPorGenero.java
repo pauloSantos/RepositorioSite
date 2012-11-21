@@ -26,7 +26,7 @@ public class GeradorEstatisticasDietasFinalizadasPorGenero implements IGeradorEs
 		coluna2.setLabel("Finalizadas");
 		coluna2.setType("number");
 
-		IDownloadDietaDAO downloadDietaDAO = new DownloadDietaDAO();
+		DownloadDietaDAO downloadDietaDAO = new DownloadDietaDAO();
 
 		double porcentagemHomens = downloadDietaDAO.contarDownloadsPorGeneroEStatus(Genero.M, StatusDieta.FEITA);
 		double porcentagemMulheres = downloadDietaDAO.contarDownloadsPorGeneroEStatus(Genero.F, StatusDieta.FEITA);
@@ -36,6 +36,7 @@ public class GeradorEstatisticasDietasFinalizadasPorGenero implements IGeradorEs
 
 		Map<String, Object> table = criarTabela(cols, rows);
 
+		downloadDietaDAO.getEntityManager().getEntityManagerFactory().close();
 		return gson.toJson(table); 
 	}
 

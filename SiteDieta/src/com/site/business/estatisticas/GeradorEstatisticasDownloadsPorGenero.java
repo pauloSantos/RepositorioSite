@@ -26,30 +26,24 @@ public class GeradorEstatisticasDownloadsPorGenero implements IGeradorEstatistic
 		coluna2.setType("number");
 		List<Map<String, Object>> cols = criarColunas(coluna1, coluna2);
 
-		double porcentagemHomens = getPorcentagem(Genero.M);
-		double porcentagemMulheres = getPorcentagem(Genero.F);
+		double porcentagemHomens = getNumeroDownloadsPorGenero(Genero.M);
+		double porcentagemMulheres = getNumeroDownloadsPorGenero(Genero.F);
 
 		List<Map<String, Object>> rows = criarLinhasDownloadsPorGenero(porcentagemHomens, porcentagemMulheres);
 
 		Map<String, Object> table = criarTabela(cols, rows);
 
+		
 		return gson.toJson(table);
 	}
 
-	private double getPorcentagem(Genero genero) {
-		double  porcentagem = 0L;
+	private double getNumeroDownloadsPorGenero(Genero genero) {
 		IDownloadDietaDAO downloadDietaDAO = new DownloadDietaDAO();
-		
-		Long totaDownloads = downloadDietaDAO.contarTotalDownloads();
-		Double totaDownloadsDouble = Double.valueOf((totaDownloads));
 		
 		Long downloadsPorGenero = downloadDietaDAO.contarDownloadsPorGenero(genero);
 		Double downloadsPorGeneroDouble = Double.valueOf((downloadsPorGenero));
 		
-		if(totaDownloads > 0){
-			porcentagem = downloadsPorGeneroDouble / totaDownloadsDouble;
-		}
-		return porcentagem;
+		return downloadsPorGeneroDouble;
 	}
 
 	private Map<String, Object> criarTabela(List<Map<String, Object>> cols, List<Map<String, Object>> rows) {
